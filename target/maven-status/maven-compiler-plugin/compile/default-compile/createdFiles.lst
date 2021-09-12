@@ -1,0 +1,17 @@
+main\java\utils\DataTableGenerator.class
+main\java\pageObjects\HomePageElements.class
+main\java\pageObjects\ContactPageElements.class
+main\java\utils\ElementFetch.class
+main\java\pageObjects\ShopPageElements.class
+main\java\Base\BaseConfigurations.class
+main\java\pageEvents\HomePageEvents.class
+main\java\utils\Constants$IdentifierTypes.class
+main\java\pageEvents\ContactPageEvents.class
+main\java\actions\ActionRepo.class
+main\java\testSuites\RegressionTestSuit.class
+main\java\utils\RetryAnalyzer.class
+main\java\pageEvents\CartPageEvents.class
+main\java\utils\SuitListener.class
+main\java\pageObjects\CartPageElements.class
+main\java\utils\Constants.class
+main\java\pageEvents\ShopPageEvents.class

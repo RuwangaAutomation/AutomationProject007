@@ -1,0 +1,18 @@
+<suite name="RegressionTestSuite" verbose="3">
+    <listeners>
+        <listener class-name="main.java.utils.SuitListener"/>
+    </listeners>
+    <test name="Jupiter Toys Automation" preserve-order="true">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="main.java.testSuites.RegressionTestSuit">
+                <methods>
+                    <include name="test001"></include>
+                    <include name="test002"></include>
+                    <include name="test003"></include>
+                    <include name="test004"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
