@@ -8,6 +8,9 @@ import main.java.pageEvents.ShopPageEvents;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+All the Framework common variables should be declared in the constant file
+ */
 public interface Constants {
     String url = "https://jupiter.cloud.planittesting.com";
     enum IdentifierTypes{

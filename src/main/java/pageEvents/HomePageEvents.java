@@ -6,19 +6,19 @@ import main.java.pageObjects.HomePageElements;
 
 public class HomePageEvents extends ActionRepo {
 
-    public void navigateToContactPage() {
+    public void goToContactPage() {
         BaseConfigurations.logger.info("Navigate to the Contact Page");
-        click("XPATH", HomePageElements.ele_lblNavContact);
+        click("XPATH", HomePageElements.label_NavContact);
     }
 
-    public void navigateToShopPage() {
+    public void goToShopPage() {
         BaseConfigurations.logger.info("Navigate to the Shop Page");
-        click("XPATH", HomePageElements.ele_lblNavShop);
+        click("XPATH", HomePageElements.label_NavShop);
     }
 
-    public void navigateToCartPage() {
+    public void goToCartPage() {
         BaseConfigurations.logger.info("Navigate to the Cart Page");
-       click("XPATH", HomePageElements.ele_lblNavCart);
+       click("XPATH", HomePageElements.label_NavCart);
     }
 
 }

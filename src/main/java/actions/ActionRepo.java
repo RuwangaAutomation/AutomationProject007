@@ -18,6 +18,9 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+/*
+Base Action repository where defined all the core actions perform on selected element
+ */
 public class ActionRepo {
 
     public void click(String elementType ,String element){
@@ -30,7 +33,7 @@ public class ActionRepo {
         elementFetch.getWebElement(elementType,element).sendKeys(value);
     }
 
-    public void isElementPresent(String elementType,String elementValue,boolean visbility,long waitTime){
+    public void isElementPresent(String elementType,String elementValue,boolean visibility,long waitTime){
 
         Duration waitDuration = Duration.ofSeconds(waitTime);
         Duration pollingDuration = Duration.ofMillis(200);
@@ -41,9 +44,9 @@ public class ActionRepo {
                 .ignoring(NoSuchElementException.class);
         try {
             fluentWait.until(ExpectedConditions.visibilityOf(elementFetch.getWebElement(elementType,elementValue)));
-            Assert.assertTrue(visbility,"Element not present");
+            Assert.assertTrue(visibility,"Element not present");
         }catch (NoSuchElementException e){
-                Assert.assertTrue(!visbility,"Element not present");
+                Assert.assertTrue(!visibility,"Element not present");
         }
 
     }

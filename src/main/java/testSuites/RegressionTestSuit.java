@@ -11,10 +11,10 @@ public class RegressionTestSuit extends BaseConfigurations implements Constants 
 
     @Test(dataProvider = "test001")
     public void test001(final String foreName, final String Email, final String Message){
-        homepageEvents.navigateToContactPage();
-        contactPageEvents.validateMandatoryFieldsError();
-        contactPageEvents.populateMandatoryFields(foreName,Email,Message);
-        contactPageEvents.validateErrorMessageVisibility();
+        homepageEvents.goToContactPage();
+        contactPageEvents.MandatoryFieldsErrorVerification();
+        contactPageEvents.FillMandatoryFields(foreName,Email,Message);
+        contactPageEvents.ErrorMessageVisibilityVerification();
     }
 
     @DataProvider(name = "test001")
@@ -26,11 +26,11 @@ public class RegressionTestSuit extends BaseConfigurations implements Constants 
 
     @Test(dataProvider = "test002")
     public void test002(final String foreName, final String Email, final String Message){
-        homepageEvents.navigateToContactPage();
-        contactPageEvents.validateMandatoryFieldsError();
-        contactPageEvents.populateMandatoryFields(foreName,Email,Message);
-        contactPageEvents.clickOnSubmitButton();
-        contactPageEvents.validateSuccessFeedbackMessage();
+        homepageEvents.goToContactPage();
+        contactPageEvents.MandatoryFieldsErrorVerification();
+        contactPageEvents.FillMandatoryFields(foreName,Email,Message);
+        contactPageEvents.Submit();
+        contactPageEvents.SuccessMessageVerification();
     }
 
     @DataProvider(name = "test002")
@@ -42,10 +42,10 @@ public class RegressionTestSuit extends BaseConfigurations implements Constants 
 
     @Test(dataProvider = "test003")
     public void test003(final String shoppedItems,final  String quantity){
-        homepageEvents.navigateToShopPage();
+        homepageEvents.goToShopPage();
         shopPageEvent.selectItems(shoppedItems,quantity);
-        homepageEvents.navigateToCartPage();
-        cartPageEvent.checkCartItems(shoppedItems,quantity);
+        homepageEvents.goToCartPage();
+        cartPageEvent.VerifyCartItems(shoppedItems,quantity);
     }
 
     @DataProvider(name = "test003")
@@ -57,9 +57,9 @@ public class RegressionTestSuit extends BaseConfigurations implements Constants 
 
     @Test(dataProvider = "test004")
     public void test004(final String shoppedItems,final  String quantity,final  String unitPrice){
-        homepageEvents.navigateToShopPage();
+        homepageEvents.goToShopPage();
         shopPageEvent.selectItems(shoppedItems,quantity);
-        homepageEvents.navigateToCartPage();
+        homepageEvents.goToCartPage();
         cartPageEvent.verifyUnitPrice(shoppedItems,unitPrice);
         cartPageEvent.verifyItemSubTotal(shoppedItems,quantity,unitPrice);
         cartPageEvent.verifyGrandTotal(shoppedItems,quantity,unitPrice);

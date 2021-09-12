@@ -18,6 +18,10 @@ import java.io.File;
 import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
+/*
+Base configuration of the Automation framework that initialize the framework
+and Configure basic core configurations.
+ */
 public class BaseConfigurations {
 
     public static WebDriver driver;

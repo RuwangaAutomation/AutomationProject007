@@ -7,42 +7,42 @@ import main.java.utils.ElementFetch;
 
 public class ContactPageEvents extends ActionRepo {
 
-    public void validateMandatoryFieldsError() {
+    public void MandatoryFieldsErrorVerification() {
 
         BaseConfigurations.logger.info("Validate Mandatory fields Error Message");
         waitTillElementToLoad("XPATH", ContactPageElements.btn_Submit,10);
         click("XPATH", ContactPageElements.btn_Submit);
-        isElementPresent("XPATH",ContactPageElements.ele_lblForeNameError,true,  30);
-        isElementPresent("XPATH",ContactPageElements.ele_lblEmailError,true,  30);
-        isElementPresent("XPATH",ContactPageElements.ele_lblMessageError,true,  30);
+        isElementPresent("XPATH",ContactPageElements.label_ForeNameError,true,  30);
+        isElementPresent("XPATH",ContactPageElements.label_EmailError,true,  30);
+        isElementPresent("XPATH",ContactPageElements.label_MessageError,true,  30);
     }
 
-    public void populateMandatoryFields(String foreName, String email, String message) {
+    public void FillMandatoryFields(String foreName, String email, String message) {
 
         BaseConfigurations.logger.info("Populate Mandatory fields");
         ElementFetch elementFetch = new ElementFetch();
-        type("XPATH", ContactPageElements.tf_ForeName,foreName);
-        type("XPATH", ContactPageElements.tf_Email,email);
-        type("XPATH", ContactPageElements.tf_Message,message);
+        type("XPATH", ContactPageElements.text_ForeName,foreName);
+        type("XPATH", ContactPageElements.text_Email,email);
+        type("XPATH", ContactPageElements.text_Message,message);
     }
 
-    public void validateSuccessFeedbackMessage() {
+    public void SuccessMessageVerification() {
 
         BaseConfigurations.logger.info("Validate Success Feedback message");
-        waitTillElementToLoad("XPATH", ContactPageElements.ele_lblMessageSuccess,50);
-        isElementPresent("XPATH", ContactPageElements.ele_lblMessageSuccess,true,30);
+        waitTillElementToLoad("XPATH", ContactPageElements.label_MessageSuccess,50);
+        isElementPresent("XPATH", ContactPageElements.label_MessageSuccess,true,30);
     }
 
-    public void validateErrorMessageVisibility() {
+    public void ErrorMessageVisibilityVerification() {
 
         BaseConfigurations.logger.info("Validate Error message visibility");
-        isElementPresent("XPATH", ContactPageElements.ele_lblForeNameError,false,10);
-        isElementPresent("XPATH", ContactPageElements.ele_lblEmailError,false,10);
-        isElementPresent("XPATH", ContactPageElements.ele_lblMessageError,false,10);
+        isElementPresent("XPATH", ContactPageElements.label_ForeNameError,false,10);
+        isElementPresent("XPATH", ContactPageElements.label_EmailError,false,10);
+        isElementPresent("XPATH", ContactPageElements.label_MessageError,false,10);
 
     }
 
-    public void clickOnSubmitButton() {
+    public void Submit() {
         BaseConfigurations.logger.info("Click on submit button");
         click("XPATH",ContactPageElements.btn_Submit);
     }

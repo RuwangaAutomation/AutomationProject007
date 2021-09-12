@@ -29,7 +29,7 @@ public class ShopPageEvents extends ActionRepo {
 
         shoppedItemMap.forEach((item,itemQty)->{
             for(int qty=0;qty<Integer.parseInt(itemQty);qty++){
-                click("XPATH", ShopPageElements.ele_lblItem(item));
+                click("XPATH", ShopPageElements.label_Item(item));
             }
         });
 
@@ -46,7 +46,7 @@ public class ShopPageEvents extends ActionRepo {
 
         List<String> purchasedItems = Arrays.asList(shoppedItems.split(","));
         purchasedItems.forEach((item)->{
-            Double actualPrice = Double.valueOf(getElementText("XPATH", ShopPageElements.ele_lblPrice(item), 50));
+            Double actualPrice = Double.valueOf(getElementText("XPATH", ShopPageElements.label_Price(item), 50));
             Constants.unitPriceMap.put(item,actualPrice);
         });
     }
