@@ -30,15 +30,15 @@ public class ContactPageEvents extends ActionRepo {
 
         BaseConfigurations.logger.info("Validate Success Feedback message");
         waitTillElementToLoad("XPATH", ContactPageElements.label_MessageSuccess,50);
-        isElementPresent("XPATH", ContactPageElements.label_MessageSuccess,true,30);
+        isElementPresent("XPATH", ContactPageElements.label_MessageSuccess,true,50);
     }
 
     public void ErrorMessageVisibilityVerification() {
 
         BaseConfigurations.logger.info("Validate Error message visibility");
-        isElementPresent("XPATH", ContactPageElements.label_ForeNameError,false,10);
-        isElementPresent("XPATH", ContactPageElements.label_EmailError,false,10);
-        isElementPresent("XPATH", ContactPageElements.label_MessageError,false,10);
+        isElementPresent("XPATH", ContactPageElements.label_ForeNameError,false,1);
+        isElementPresent("XPATH", ContactPageElements.label_EmailError,false,1);
+        isElementPresent("XPATH", ContactPageElements.label_MessageError,false,1);
 
     }
 

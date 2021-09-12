@@ -40,12 +40,11 @@ public class ActionRepo {
         ElementFetch elementFetch = new ElementFetch();
         FluentWait<WebDriver> fluentWait = new FluentWait<WebDriver>(BaseConfigurations.driver)
                 .withTimeout(waitDuration)
-                .pollingEvery(pollingDuration)
-                .ignoring(NoSuchElementException.class);
+                .pollingEvery(pollingDuration);
         try {
             fluentWait.until(ExpectedConditions.visibilityOf(elementFetch.getWebElement(elementType,elementValue)));
             Assert.assertTrue(visibility,"Element not present");
-        }catch (NoSuchElementException e){
+        }catch (Exception e){
                 Assert.assertTrue(!visibility,"Element not present");
         }
 
@@ -58,8 +57,7 @@ public class ActionRepo {
         ElementFetch elementFetch = new ElementFetch();
         FluentWait<WebDriver> fluentWait = new FluentWait<WebDriver>(BaseConfigurations.driver)
                 .withTimeout(waitDuration)
-                .pollingEvery(pollingDuration)
-                .ignoring(NoSuchElementException.class);
+                .pollingEvery(pollingDuration);
         fluentWait.until(ExpectedConditions.visibilityOf(elementFetch.getWebElement(elementType,elementValue)));
 
     }
@@ -71,8 +69,7 @@ public class ActionRepo {
         ElementFetch elementFetch = new ElementFetch();
         FluentWait<WebDriver> fluentWait = new FluentWait<WebDriver>(BaseConfigurations.driver)
                 .withTimeout(waitDuration)
-                .pollingEvery(pollingDuration)
-                .ignoring(NoSuchElementException.class);
+                .pollingEvery(pollingDuration);
         WebElement element = fluentWait.until(ExpectedConditions.visibilityOf(elementFetch.getWebElement(elementType,elementValue)));
         return  element.getText();
     }
